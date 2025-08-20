@@ -76,6 +76,6 @@ function createCarousel(containerId, data, isPhoto = false) {
       { title: "Album 5" },
     ];
 
-    createCarousel("videoSection", videoData);
-    createCarousel("livestreamSection", videoData);
-    createCarousel("photoSection", photoAlbums, true);
+createCarousel("videoSection", videoData);
+createCarousel("livestreamSection", videoData);
+createCarousel("photoSection", photoAlbums, true);
