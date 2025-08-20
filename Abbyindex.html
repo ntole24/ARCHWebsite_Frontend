@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>General Page Template</title>
+        <link rel="stylesheet" href="styleAbby.css" />
+        <script src="scriptAbby.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet" />
+    </head>
+    <body>
+    <header class="header">
+        <div class="header__tagline tagline tagline--inter">
+            <p>The PREMIER online television network organization of De La Salle University</p>
+        </div>
+        <nav class="navbar navbar--inter">
+            <img class="navbar__logo" src="assets/logo-ARCH.svg" alt="Archers Network logo" />
+            <ul class="navbar__list">
+                <li class="navbar__item"><a class="navbar__link" href="#">Home</a></li>
+                <li class="navbar__item navbar__item--has-dropdown" id="channels-dropdown">
+                    <a class="navbar__link" href="#" id="channels-toggle">Channels</a>
+                    <div class="navbar__dropdown dropdown dropdown--afacad" id="channels-nav">
+                        <a class="dropdown__link" href="#">Entertainment</a>
+                        <a class="dropdown__link" href="#">Sports</a>
+                        <a class="dropdown__link" href="#">Culture</a>
+                        <a class="dropdown__link" href="#">Advertisements</a>
+                        <a class="dropdown__link" href="#">News and Current Affairs</a>
+                        <a class="dropdown__link" href="#">Events</a>
+                    </div>
+                </li>
+                <li class="navbar__item"><a class="navbar__link" href="#">Art</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#">Talents</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#">About Us</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <footer class="footer footer--inter">
+        <div class="footer__content">
+            <p class="footer__cta cta cta--inter">
+                <span class="cta__highlight">Archers Network</span> is <br />
+                open to collaborations!
+            </p>
+            <div class="footer__contact-item contact-item contact-item--location contact-item--inter">
+                <img class="contact-item__icon" src="assets/location-vector.svg" />
+                <p class="contact-item__text">Room 501, Br. Connon FSC Hall, De La Salle University, Malate, Manila, Philippines</p>
+            </div>
+            <div class="footer__contact-item contact-item contact-item--email contact-item--inter">
+                <img class="contact-item__icon" src="assets/email-vector.svg" />
+                <p class="contact-item__text">archersnetwork@dlsu.edu.ph</p>
+            </div>
+        </div>
+        <div class="footer__form">
+            <form class="form form--grid">
+                <div class="form__group">
+                    <label for="name" class="form__label form__label--inter form__label--highlight">Name</label>
+                    <input type="text" id="name" name="name" class="form__input" required />
+                </div>
+                <div class="form__group">
+                    <label for="contact" class="form__label form__label--inter form__label--highlight">Contact No.</label>
+                    <input type="text" id="contact" name="contact" class="form__input" required />
+                </div>
+                <div class="form__group">
+                    <label for="email" class="form__label form__label--inter form__label--highlight">Email Address</label>
+                    <input type="email" id="email" name="email" class="form__input" required />
+                </div>
+                <div class="form__group">
+                    <label for="inquiry" class="form__label form__label--inter form__label--highlight">Inquiry</label>
+                    <input type="text" id="inquiry" name="inquiry" class="form__input" required />
+                </div>
+            </form>
+        </div>
+    </footer>
+</body>
+
+</html>
