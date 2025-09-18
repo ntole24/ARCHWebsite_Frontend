@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+#streams {
+    height: 100vh;
+    width: 100vw;
+}
+
+.streams__row  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.streams__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.streams__main {
+    max-width: 50%;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#play-button {
+    z-index: 1;
+    margin: 0;
+    font-size: 80px;
+    color: #fff;
+}
+
+.streams__main--pic {
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    transition: all 300ms ease;
+}
+
+.streams__bar {
+    height: 100%;
+    margin: 0 80px;
+}
+
+.streams__container--bar {
+  height: 70vh;
+  width: 6px;
+  background-color: #232323;
+}
+
+.streams__container--reco {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 50%;
+    gap: 260px;
+}
+
+.streams__reco {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.streams__reco--top,
+.streams__reco--bottom {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    transition: all 300ms ease;
+}
+
+.streams__main--pic:hover,
+.streams__reco--top:hover,
+.streams__reco--bottom:hover {
+    z-index: 0;
+    filter: brightness(50%);
+} 

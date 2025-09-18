@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style__services.css" />
+    <script
+      src="https://kit.fontawesome.com/f0dc26a1be.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("5A7nE4A9eKeospPJF"); // mi public key
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header__box">
+        <h6 class="header__box--para">
+          The PREMIER online television network organization of De La Salle
+          University - Manila.
+        </h6>
+      </div>
+      <figure class="header__logo">
+        <img
+          class="header__logo--img"
+          src="./assets/ARCH__logo.svg"
+          alt="ARCH__logo"
+        />
+      </figure>
+      <nav>
+        <ul class="nav__links--list">
+          <li><a href="" class="nav__link">Home</a></li>
+          <li><a href="" class="nav__link">Channels</a></li>
+          <li><a href="" class="nav__link">Art</a></li>
+          <li><a href="" class="nav__link">Talents</a></li>
+          <li><a href="" class="nav__link">About Us</a></li>
+          <li><a href="" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="work-with-us">
+      <div class="container">
+        <div class="row work__row">
+          <div class="work__header">
+            <h1 class="work__header--title">Work With Us</h1>
+          </div>
+          <div class="work__services--header">
+              <div class="work__title">
+              <h2 class="green work__services--title">OUR SERVICES</h2>
+            </div>
+            <div class="work__bar">
+              <hr class="work__services--bar">
+            </div>
+          </div>
+          <div class="work__services">
+            <div class="work__services--item">
+              <a href="./contact-events.html" class="work__item--title">Event Coverages</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+            <div class="work__services--item">
+              <a href="./contact-talents.html" class="work__item--title">Talent Booking</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+            <div class="work__services--item">
+              <a href="" class="work__item--title">Promotional Video</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+            <div class="work__services--item">
+              <a href="./contact-streams.html" class="work__item--title">Livestreaming</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+            <div class="work__services--item">
+              <a href="" class="work__item--title">Product Feature</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+            <div class="work__services--item">
+              <a href="" class="work__item--title">Food Feature</a>
+              <figure class="work__item--background">
+                <img src="./assets/Untitled design.png" alt="" class="work__item--pic" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer__description">
+        <h1 class="footer__title">
+          <span class="green">Archers Network</span> is
+        </h1>
+        <h1 class="footer__title">open to collaborations!</h1>
+        <div class="footer__address">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="address">
+            Room 501, Br. Connon FSC Hall, De La Salle University, Malate,
+            Manila, Philippines
+          </p>
+        </div>
+        <div class="footer__email">
+          <i class="fa-regular fa-envelope"></i>
+          <p class="email">archersnetwork@dlsu.edu.ph</p>
+        </div>
+      </div>
+      <form id="contact__form" onsubmit="contact(event)">
+        <div class="form__list--top">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Contact No.</label>
+            <input class="input" name="contact_number" type="text" />
+          </div>
+        </div>
+        <div class="form__list--bottom">
+          <div class="form__item">
+            <label class="form__item--label">Email</label>
+            <input class="input" name="user_email" type="email" required />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Inquiry</label>
+            <input
+              class="input"
+              name="message"
+              type="text"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <button type="submit" id="contact__submit" class="form__submit">
+          Submit
+        </button>
+      </form>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("contact__submit")
+          .addEventListener("submit", contact);
+      });
+    </script>
+  </body>
+</html>

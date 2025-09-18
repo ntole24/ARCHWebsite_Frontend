@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style__contact.css">
+    <script
+      src="https://kit.fontawesome.com/f0dc26a1be.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("5A7nE4A9eKeospPJF"); // mi public key
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header__box">
+        <h6 class="header__box--para">
+          The PREMIER online television network organization of De La Salle
+          University - Manila.
+        </h6>
+      </div>
+      <figure class="header__logo">
+        <img
+          class="header__logo--img"
+          src="./assets/ARCH__logo.svg"
+          alt="ARCH__logo"
+        />
+      </figure>
+      <nav>
+        <ul class="nav__links--list">
+          <li><a href="" class="nav__link">Home</a></li>
+          <li><a href="" class="nav__link">Channels</a></li>
+          <li><a href="" class="nav__link">Art</a></li>
+          <li><a href="" class="nav__link">Talents</a></li>
+          <li><a href="" class="nav__link">About Us</a></li>
+          <li><a href="" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="landing">
+      <div class="container">
+        <div class="row landing__row">
+          <h1 class="landing__title">Contact Us</h1>
+          <div class="create__box">
+            <div class="create__gradient--top"></div>
+            <div class="create__main">
+              <h2 class="create__main--title">
+                CREATE WITH <span class="green create__span">ARCH</span>
+              </h2>
+              <figure class="create__main--background">
+                <img
+                  class="create__main--pic"
+                  src="./assets/4-up_on_3-11-25_at_9.png"
+                  alt=""
+                />
+              </figure>
+            </div>
+            <div class="create__gradient--bottom"></div>
+          </div>
+          <div>
+            <a class="landing__button" href="./contact-services.html"
+              >View our services here</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer__landing">
+      <div class="container">
+        <div class="row footer__row">
+          <div class="footer__half--left">
+            <h2 class="footer__left--title">Our Office</h2>
+            <div class="footer__left--details">
+              <p class="footer__left--para">Student Media Office</p>
+              <div class="footer__location">
+                <i class="fa-solid fa-location-dot fa-xl"></i>
+                <p class="footer__location--para">
+                  Room 501 Br. Connon FSC Hall, De La Salle University, Malate,
+                  Manila, Philippines
+                </p>
+              </div>
+              <div class="footer__number">
+                <i class="fa-solid fa-phone fa-xl"></i>
+                <p class="footer__number--para">(02) 524 4611 loc. 738</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer__half--right">
+            <div class="footer__right--box">
+              <h2 class="footer__right--title">Let's Collab!</h2>
+              <form id="landing-contact__form" onsubmit="contact(event)">
+                <div class="form__item landing-form__item">
+                <label class="form__item--label">Name</label>
+                <input class="input" name="user_name" type="text" />
+              </div>
+              <div class="form__item landing-form__item">
+                <label class="form__item--label">Contact No.</label>
+                <input class="input" name="contact_number" type="text" />
+              </div>
+              <div class="form__item landing-form__item">
+                <label class="form__item--label">Email</label>
+                <input class="input" name="user_email" type="email" required />
+              </div>
+              <div class="form__item landing-form__item">
+                <label class="form__item--label">Inquiry</label>
+                <input
+                class="input"
+                name="message"
+                type="text"
+                required
+                autocomplete="off"
+                />
+              </div>
+            </form>
+          </div>
+            <button
+            type="submit"
+            id="contact__submit"
+            class="landing-form__submit">
+            Submit
+          </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

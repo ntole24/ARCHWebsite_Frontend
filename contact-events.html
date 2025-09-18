@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style__events.css">
+    <script
+      src="https://kit.fontawesome.com/f0dc26a1be.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("5A7nE4A9eKeospPJF"); // mi public key
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header__box">
+          <h6 class="header__box--para">
+            The PREMIER online television network organization of De La Salle
+            University - Manila.
+          </h6>
+        </div>
+        <figure class="header__logo">
+          <img
+            class="header__logo--img"
+            src="./assets/ARCH__logo.svg"
+            alt="ARCH__logo"
+          />
+        </figure>
+        <nav>
+          <ul class="nav__links--list">
+            <li><a href="" class="nav__link">Home</a></li>
+            <li><a href="" class="nav__link">Channels</a></li>
+            <li><a href="" class="nav__link">Art</a></li>
+            <li><a href="" class="nav__link">Talents</a></li>
+            <li><a href="" class="nav__link">About Us</a></li>
+            <li><a href="" class="active">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+<section id="events">
+      <div class="container">
+        <div class="row events__row">
+          <div class="section__description">
+            <h4 class="section__descripion--title">ARCHERS NETWORK</h4>
+            <h3 class="section__description--sub-title">Event Coverages</h3>
+            <p class="section__description--para section__para--events">
+              <strong><em>Need help in excellent coverage for your next event?</em></strong> Our trained photographers and videographers got you covered with their skills and equipment.
+            </p>
+          </div>
+          <div class="events__container">
+            <div class="events__image">
+              <figure class="events-img">
+                <img src="./assets/pic2.png" class="events__main-pic" alt="">
+              </figure>
+              <p class="events__image--para">PHOTO BY WHOEVER</p>
+            </div>
+            <div class="events__image">
+              <figure class="events-img">
+                <img src="./assets/pic2.png" class="events__main-pic" alt="">
+              </figure>
+              <p class="events__image--para">PHOTO BY WHOEVER</p>
+            </div>
+            <div class="events__image">
+              <figure class="events-img">
+                <img src="./assets/pic2.png" class="events__main-pic" alt="">
+              </figure>
+              <p class="events__image--para">PHOTO BY WHOEVER</p>
+            </div>
+            <div class="events__image">
+              <figure class="events-img">
+                <img src="./assets/pic2.png" class="events__main-pic" alt="">
+              </figure>
+              <p class="events__image--para">PHOTO BY WHOEVER</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <footer>
+        <div class="footer__description">
+          <h1 class="footer__title">
+            <span class="green">Archers Network</span> is open to collaborations!
+          </h1>
+          <div class="footer__address">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="address">
+              Room 501, Br. Connon FSC Hall, De La Salle University, Malate,
+              Manila, Philippines
+            </p>
+          </div>
+          <div class="footer__email">
+            <i class="fa-regular fa-envelope"></i>
+            <p class="email">archersnetwork@dlsu.edu.ph</p>
+          </div>
+        </div>
+        <form id="contact__form" onsubmit="contact(event)">
+          <div class="form__list--top">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Contact No.</label>
+              <input class="input" name="contact_number" type="text" />
+            </div>
+          </div>
+          <div class="form__list--bottom">
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Inquiry</label>
+              <input
+                class="input"
+                name="message"
+                type="text"
+                required
+                autocomplete="off"
+              />
+            </div>
+          </div>
+          <button type="submit" id="contact__submit" class="form__submit">
+            Submit
+          </button>
+        </form>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document
+            .getElementById("contact__submit")
+            .addEventListener("submit", contact);
+        });
+      </script>
+</body>
+</html>
