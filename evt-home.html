@@ -1,94 +1,151 @@
-
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Archers Network Events Page</title>
-  <script src="evt-home.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-  <link href="evt-home.css" rel="stylesheet" />
-  <link href="general-feats.css" rel="stylesheet" />
-</head>
-<body>
-  <header class="header">
-        <div class="header__tagline tagline tagline--inter">
-            <p>The PREMIER online television network organization of De La Salle University</p>
-        </div>
-        <nav class="navbar navbar--inter">
-            <img class="navbar__logo" src="assets/logo-ARCH.svg" alt="Archers Network logo" />
-            <ul class="navbar__list">
-                <li class="navbar__item"><a class="navbar__link" href="#">Home</a></li>
-                <li class="navbar__item navbar__item--has-dropdown" id="channels-dropdown">
-                    <a class="navbar__link" href="#" id="channels-toggle">Channels</a>
-                    <div class="navbar__dropdown dropdown dropdown--afacad" id="channels-nav">
-                        <a class="dropdown__link" href="#">Entertainment</a>
-                        <a class="dropdown__link" href="#">Sports</a>
-                        <a class="dropdown__link" href="#">Culture</a>
-                        <a class="dropdown__link" href="#">Advertisements</a>
-                        <a class="dropdown__link" href="#">News and Current Affairs</a>
-                        <a class="dropdown__link" href="#">Events</a>
-                    </div>
-                </li>
-                <li class="navbar__item"><a class="navbar__link" href="#">Art</a></li>
-                <li class="navbar__item"><a class="navbar__link" href="#">Talents</a></li>
-                <li class="navbar__item"><a class="navbar__link" href="#">About Us</a></li>
-                <li class="navbar__item"><a class="navbar__link" href="#">Contact Us</a></li>
-            </ul>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./evt-home.css" />
+    <script
+      src="https://kit.fontawesome.com/f0dc26a1be.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="./evt-home.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("5A7nE4A9eKeospPJF"); // mi public key
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header__box">
+        <h6 class="header__box--para">
+          The PREMIER online television network organization of De La Salle
+          University - Manila.
+        </h6>
+      </div>
+      <figure class="header__logo">
+        <img
+          class="header__logo--img"
+          src="./assets/ARCH__logo.svg"
+          alt="ARCH__logo"
+        />
+      </figure>
+      <nav>
+        <ul class="nav__links--list">
+          <li><a href="" class="nav__link">Home</a></li>
+          <li><a href="" class="nav__link">Channels</a></li>
+          <li><a href="" class="nav__link">Art</a></li>
+          <li><a href="" class="nav__link">Talents</a></li>
+          <li><a href="" class="nav__link">About Us</a></li>
+          <li><a href="" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
     </header>
-
-  <section>
-    <h2>VIDEO HIGHLIGHTS</h2>
-    <div class="carousel-container" id="videoSection"></div>
-  </section>
-
-  <section>
-    <h2>LIVESTREAMS</h2>
-    <div class="carousel-container" id="livestreamSection"></div>
-  </section>
-
-  <section class="photo">
-    <h2>PHOTO ALBUMS</h2>
-    <div class="carousel-container" id="photoSection"></div>
-  </section>
-
-  <footer class="footer footer--inter">
-        <div class="footer__content">
-            <p class="footer__cta cta cta--inter">
-                <span class="cta__highlight">Archers Network</span> is <br />
-                open to collaborations!
-            </p>
-            <div class="footer__contact-item contact-item contact-item--location contact-item--inter">
-                <img class="contact-item__icon" src="assets/location-vector.svg" />
-                <p class="contact-item__text">Room 501, Br. Connon FSC Hall, De La Salle University, Malate, Manila, Philippines</p>
+    <section id="page__description">
+      <div class="container">
+        <div class="row">
+          <div class="section__description">
+            <h4 class="section__descripion--title">ARCHERS NETWORK</h4>
+            <h3 class="section__description--sub-title">EVENTS</h3>
+          </div>
+          <div class="highlights__header">
+            <div class="highlights__title">
+              <h2 class="green highlights__title--sizing">VIDEO HIGHLIGHTS</h2>
             </div>
-            <div class="footer__contact-item contact-item contact-item--email contact-item--inter">
-                <img class="contact-item__icon" src="assets/email-vector.svg" />
-                <p class="contact-item__text">archersnetwork@dlsu.edu.ph</p>
+            <div class="highlights__bar">
+              <hr />
             </div>
+          </div>
+
+<div class="video-carousel-container">
+  <div class="main-video-container">
+    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&h=320&fit=crop&sat=-20" alt="Main Video" class="main-video" id="mainVideo">
+    <div class="video-overlay">
+      <div class="video-title" id="videoTitle">Video Title</div>
+      <div class="video-date" id="videoDate">January 1, 2025</div>
+    </div>
+  </div>
+  
+  <div class="thumbnail-section">
+    <div class="thumbnail-container">
+      <div class="thumbnail-track" id="thumbnailTrack">
+      </div>
+    </div>
+    <button class="nav-button prev" id="prevBtn" onclick="scrollThumbnails('prev')">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6v12z"/>
+      </svg>
+    </button>
+    <button class="nav-button next" id="nextBtn" onclick="scrollThumbnails('next')">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 6l6 6-6 6V6z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
         </div>
-        <div class="footer__form">
-            <form class="form form--grid">
-                <div class="form__group">
-                    <label for="name" class="form__label form__label--inter form__label--highlight">Name</label>
-                    <input type="text" id="name" name="name" class="form__input" required />
-                </div>
-                <div class="form__group">
-                    <label for="contact" class="form__label form__label--inter form__label--highlight">Contact No.</label>
-                    <input type="text" id="contact" name="contact" class="form__input" required />
-                </div>
-                <div class="form__group">
-                    <label for="email" class="form__label form__label--inter form__label--highlight">Email Address</label>
-                    <input type="email" id="email" name="email" class="form__input" required />
-                </div>
-                <div class="form__group">
-                    <label for="inquiry" class="form__label form__label--inter form__label--highlight">Inquiry</label>
-                    <input type="text" id="inquiry" name="inquiry" class="form__input" required />
-                </div>
-            </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer__description">
+        <h1 class="footer__title">
+          <span class="green">Archers Network</span> is open to collaborations!
+        </h1>
+        <div class="footer__address">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="address">
+            Room 501, Br. Connon FSC Hall, De La Salle University, Malate,
+            Manila, Philippines
+          </p>
         </div>
+        <div class="footer__email">
+          <i class="fa-regular fa-envelope"></i>
+          <p class="email">archersnetwork@dlsu.edu.ph</p>
+        </div>
+      </div>
+      <form id="contact__form" onsubmit="contact(event)">
+        <div class="form__list--top">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Contact No.</label>
+            <input class="input" name="contact_number" type="text" />
+          </div>
+        </div>
+        <div class="form__list--bottom">
+          <div class="form__item">
+            <label class="form__item--label">Email</label>
+            <input class="input" name="user_email" type="email" required />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Inquiry</label>
+            <input
+              class="input"
+              name="message"
+              type="text"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <button type="submit" id="contact__submit" class="form__submit">
+          Submit
+        </button>
+      </form>
     </footer>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("contact__submit")
+          .addEventListener("submit", contact);
+      });
+    </script>
+  </body>
 </html>

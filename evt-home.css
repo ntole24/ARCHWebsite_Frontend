@@ -1,67 +1,198 @@
-body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 2rem; /* This is causing the spacing to be weird with the header and footer */
-    }
-
-section {
-    margin-bottom: 4rem;
+.highlights__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-h2 {
-    color: green;
-    border-bottom: 2px solid green;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+.highlights__title {
+  margin-left: 80px;
+  margin-right: 40px;
+  width: 40%;
 }
 
-.carousel-container {
-    max-width: 800px;
-    margin: auto;
+.highlights__title--sizing {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 72px;
 }
 
-.featured {
-    background: linear-gradient(to bottom, #ccc, #000);
-    color: white;
-    height: 200px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.highlights__bar {
+  width: 100%;
 }
 
-.carousel {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.video-carousel-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: transparent;
 }
 
-.carousel-items {
-    display: flex;
-    overflow: hidden;
-    gap: 10px;
+.main-video-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(180deg, #C0C0C0 0%, #808080 50%, #404040 100%);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 
-.carousel-item {
-    background: linear-gradient(to bottom, #ccc, #000);
-    color: white;
-    width: 100px;
-    height: 60px;
-    padding: 0.5rem;
-    font-size: 0.7rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.main-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  color: white;
 }
 
-.photo .featured {
-    display: none;
+.video-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.video-date {
+  font-size: 13px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.thumbnail-section {
+  position: relative;
+  width: 100%;
+}
+
+.thumbnail-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail-track {
+  display: flex;
+  gap: 8px;
+  transition: transform 0.3s ease;
+  height: 50px;
+  align-items: center;
+}
+
+.thumbnail {
+  flex: 0 0 90px;
+  height: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(180deg, #C0C0C0 0%, #808080 50%, #404040 100%);
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumbnail.active {
+  border-color: #00E5A0;
+  transform: scale(1.05);
+}
+
+.thumbnail:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail.active:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  padding: 4px 6px;
+  color: white;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button:hover {
+  background: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button.prev {
+  left: 5px;
+}
+
+.nav-button.next {
+  right: 5px;
+}
+
+.nav-button svg {
+  width: 12px;
+  height: 12px;
+  fill: #333;
+}
+
+@media (max-width: 640px) {
+  .video-carousel-container {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  
+  .thumbnail {
+    flex: 0 0 95px;
+    height: 55px;
+  }
+  
+  .main-video-container {
+    height: 250px;
+  }
+  
+  .thumbnail-container {
+    margin: 0 35px;
+    height: 70px;
+  }
+  
+  .thumbnail-track {
+    height: 55px;
+  }
 }
