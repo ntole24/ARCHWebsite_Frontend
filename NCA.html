@@ -1,61 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Archers Network News</title>
-  <link rel="stylesheet" href="NCA.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archers Network News</title>
+    <link rel="stylesheet" href="NCA.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="general-feats.css" />
+    <script src="general-feats.js" defer></script>
+    <script src="NCA.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header__box">
+        <h6 class="header__box--para">
+          The PREMIER online television network organization of De La Salle
+          University - Manila.
+        </h6>
+      </div>
+      <figure class="header__logo">
+        <img
+          class="header__logo--img"
+          src="./assets/ARCH__logo.svg"
+          alt="ARCH__logo"
+        />
+      </figure>
+      <nav>
+        <ul class="nav__links--list">
+          <li><a href="#" class="nav__link">Home</a></li>
+          <li><a href="#" class="nav__link">Channels</a></li>
+          <li><a href="#" class="nav__link">Art</a></li>
+          <li><a href="#" class="nav__link">Talents</a></li>
+          <li><a href="#" class="nav__link">About Us</a></li>
+          <li><a href="#" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- LATEST STORIES -->
-  <section class="stories">
-    <h2 class="stories__title">LATEST STORIES</h2>
-    <div class="stories__grid">
-      <div class="stories__featured">
-        <img src="https://via.placeholder.com/600x350?text=Featured+Story" alt="Featured Story"/>
-        <div class="stories__caption">
-          <h3>Title</h3>
-          <p>Date</p>
+    <section id="page__description">
+      <div class="container">
+        <div class="row">
+          <div class="section__description">
+            <h4 class="section__description--title">ARCHERS NETWORK</h4>
+            <h3 class="section__description--sub-title">
+              NEWS & CURRENT AFFAIRS
+            </h3>
+          </div>
+          <div class="latest__header">
+            <div class="latest__title">
+              <h2 class="green latest__title--sizing">LATEST VIDEOS</h2>
+            </div>
+            <div class="latest__bar--container">
+              <hr class="latest__bar" />
+            </div>
+          </div>
+          <div class="container__main--imgs">
+            <div class="main__big">
+              <figure class="big__img">
+                <img src="./assets/pic.png" alt="" />
+              </figure>
+            </div>
+            <div class="main__small">
+              <figure class="small__img">
+                <img src="./assets/pic2.png" alt="" />
+              </figure>
+              <figure class="small__img img--bottom">
+                <img src="./assets/pic2.png" alt="" />
+              </figure>
+            </div>
+          </div>
+          <div class="divider">
+            <hr class="divider__line" />
+          </div>
+          <div class="project__carousel">
+            <h2 class="green project__title">News Report</h2>
+            <div class="container__slider">
+              <img src="./assets/arrow.svg" class="arrow arrow--left" />
+              <div class="slider--wrapper">
+                <div class="slider">
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                </div>
+              </div>
+              <img src="./assets/arrow.svg" class="arrow arrow--right" />
+            </div>
+          </div>
+          <div class="project__carousel">
+            <h2 class="green project__title">seARCHLight</h2>
+            <div class="container__slider">
+              <img src="./assets/arrow.svg" class="arrow arrow--left" />
+              <div class="slider--wrapper">
+                <div class="slider">
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                </div>
+              </div>
+              <img src="./assets/arrow.svg" class="arrow arrow--right" />
+            </div>
+          </div>
+          <div class="project__carousel">
+            <h2 class="green project__title">The Podium</h2>
+            <div class="container__slider">
+              <img src="./assets/arrow.svg" class="arrow arrow--left" />
+              <div class="slider--wrapper">
+                <div class="slider">
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                </div>
+              </div>
+              <img src="./assets/arrow.svg" class="arrow arrow--right" />
+            </div>
+          </div>
+          <div class="divider">
+            <hr class="divider__line" />
+          </div>
+          <div class="coverages__carousel">
+            <h2 class="green project__title">PHOTO COVERAGES</h2>
+            <div class="container__slider">
+              <img src="./assets/arrow.svg" class="arrow arrow--left" />
+              <div class="slider--wrapper">
+                <div class="slider">
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                  <img src="./assets/pic.png" alt="" class="slider__img" />
+                  <img src="./assets/pic2.png" alt="" class="slider__img" />
+                </div>
+              </div>
+              <img src="./assets/arrow.svg" class="arrow arrow--right" />
+            </div>
+          </div>
         </div>
       </div>
-      <div class="stories__side">
-        <div class="stories__item">
-          <img src="https://via.placeholder.com/250x150?text=Story+1" alt="Story 1"/>
-          <p>Title - Date</p>
+    </section>
+
+    <footer class="footer footer--inter">
+      <div class="footer__content">
+        <p class="footer__cta cta cta--inter">
+          <span class="cta__highlight">Archers Network</span> is <br />
+          open to collaborations!
+        </p>
+        <div
+          class="footer__contact-item contact-item contact-item--location contact-item--inter"
+        >
+          <img
+            class="contact-item__icon"
+            src="assets/location-vector.svg"
+            alt="Location icon"
+          />
+          <p class="contact-item__text">
+            Room 501, Br. Connon FSC Hall, De La Salle University, Malate,
+            Manila, Philippines
+          </p>
         </div>
-        <div class="stories__item">
-          <img src="https://via.placeholder.com/250x150?text=Story+2" alt="Story 2"/>
-          <p>Title - Date</p>
+        <div
+          class="footer__contact-item contact-item contact-item--email contact-item--inter"
+        >
+          <img
+            class="contact-item__icon"
+            src="assets/email-vector.svg"
+            alt="Email icon"
+          />
+          <p class="contact-item__text">archersnetwork@dlsu.edu.ph</p>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="footer__form">
+        <form class="form form--grid">
+          <div class="form__group">
+            <label
+              for="name"
+              class="form__label form__label--inter form__label--highlight"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label
+              for="contact"
+              class="form__label form__label--inter form__label--highlight"
+              >Contact No.</label
+            >
+            <input
+              type="text"
+              id="contact"
+              name="contact"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label
+              for="email"
+              class="form__label form__label--inter form__label--highlight"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label
+              for="inquiry"
+              class="form__label form__label--inter form__label--highlight"
+              >Inquiry</label
+            >
+            <input
+              type="text"
+              id="inquiry"
+              name="inquiry"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <button type="submit" class="form__button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </footer>
 
-  <!-- NEWS REPORTS -->
-  <section class="carousel-section">
-    <h2 class="carousel-section__title">NEWS REPORTS</h2>
-    <div class="carousel" id="reports-carousel"></div>
-  </section>
-
-  <!-- SEARCHLIGHT -->
-  <section class="carousel-section">
-    <h2 class="carousel-section__title">seARCHLight</h2>
-    <div class="carousel" id="searchlight-carousel"></div>
-  </section>
-
-  <!-- PODIUM -->
-  <section class="carousel-section">
-    <h2 class="carousel-section__title">The Podium</h2>
-    <div class="carousel" id="podium-carousel"></div>
-  </section>
-
-  <!-- PHOTO COVERAGES -->
-  <section class="carousel-section">
-    <h2 class="carousel-section__title">PHOTO COVERAGES</h2>
-    <div class="carousel" id="photo-carousel"></div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
