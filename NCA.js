@@ -1,87 +1,105 @@
-function createCarousel(containerId, data) {
-  const container = document.getElementById(containerId);
-  let index = 0;
-  const visibleCount = 3;
+// CAROUSEL TYPE 1: Set-based (moves 3 images at a time)
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".project__carousel .slider").forEach(slider => {
+    const originalImages = Array.from(slider.querySelectorAll(".slider__img"))
+    
+    originalImages.forEach(img => {
+      slider.appendChild(img.cloneNode(true))
+    })
+    
+    slider.style.setProperty("--slider-index", 0)
+  })
+})
 
-  const prevBtn = document.createElement("button");
-  prevBtn.className = "carousel__button carousel__button--prev";
-  prevBtn.textContent = "‹";
+// CAROUSEL TYPE 2: Single image (center-focused, moves 1 at a time)
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".coverages__carousel .slider").forEach(slider => {
+    const originalImages = Array.from(slider.querySelectorAll(".slider__img"))
+    
+    originalImages.forEach(img => {
+      slider.appendChild(img.cloneNode(true))
+    })
+    
+    slider.style.setProperty("--slider-index", 1)
+    updateActiveImage(slider, 1)
+  })
+})
 
-  const nextBtn = document.createElement("button");
-  nextBtn.className = "carousel__button carousel__button--next";
-  nextBtn.textContent = "›";
-
-  const itemsWrapper = document.createElement("div");
-  itemsWrapper.className = "carousel__items";
-
-  function renderItems() {
-    itemsWrapper.innerHTML = "";
-    const visibleItems = data.slice(index, index + visibleCount);
-
-    visibleItems.forEach(item => {
-      const itemDiv = document.createElement("div");
-      itemDiv.className = "carousel__item";
-      itemDiv.innerHTML = `
-        <img src="${item.img}" alt="${item.title}">
-        <p class="carousel__caption">${item.title}</p>
-      `;
-      itemsWrapper.appendChild(itemDiv);
-    });
-
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index + visibleCount >= data.length;
+function updateActiveImage(slider, index) {
+  const images = slider.querySelectorAll(".slider__img")
+  images.forEach(img => img.classList.remove("activeSlide"))
+  if (images[index]) {
+    images[index].classList.add("activeSlide")
   }
-
-  prevBtn.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      renderItems();
-    }
-  });
-
-  nextBtn.addEventListener("click", () => {
-    if (index + visibleCount < data.length) {
-      index++;
-      renderItems();
-    }
-  });
-
-  renderItems();
-
-  container.appendChild(prevBtn);
-  container.appendChild(itemsWrapper);
-  container.appendChild(nextBtn);
 }
 
-// Sample data with local images
-const reportsData = [
-  { title: "Report 1 - Aug 2024", img: "images/report1.jpg" },
-  { title: "Report 2 - Sep 2024", img: "images/report2.jpg" },
-  { title: "Report 3 - Oct 2024", img: "images/report3.jpg" },
-  { title: "Report 4 - Nov 2024", img: "images/report4.jpg" }
-];
+document.addEventListener("click", e => {
+  let arrow
+  if (e.target.matches(".arrow")) {
+    arrow = e.target
+  } else {
+    arrow = e.target.closest(".arrow")
+  }
+  if (arrow != null) onArrowClick(arrow)
+})
 
-const searchlightData = [
-  { title: "seARCHLight Ep. 1", img: "images/search1.jpg" },
-  { title: "seARCHLight Ep. 2", img: "images/search2.jpg" },
-  { title: "seARCHLight Ep. 3", img: "images/search3.jpg" }
-];
+function onArrowClick(arrow) {
+  const container = arrow.closest(".project__carousel, .coverages__carousel")
+  const slider = container.querySelector(".slider")
+  let sliderIndex = parseInt(
+    getComputedStyle(slider).getPropertyValue("--slider-index")
+  )
+  const totalImages = slider.children.length
+  const originalCount = totalImages / 2
+  
+  const isSetCarousel = container.classList.contains("project__carousel")
+  const itemsPerScreen = 3
+  const maxSets = Math.ceil(originalCount / itemsPerScreen)
 
-const podiumData = [
-  { title: "Podium Ep. 1", img: "images/podium1.jpg" },
-  { title: "Podium Ep. 2", img: "images/podium2.jpg" },
-  { title: "Podium Ep. 3", img: "images/podium3.jpg" }
-];
+  if (arrow.classList.contains("arrow--left")) {
+    sliderIndex--
+  } else if (arrow.classList.contains("arrow--right")) {
+    sliderIndex++
+  }
 
-const photoData = [
-  { title: "Photo Coverage 1", img: "images/photo1.jpg" },
-  { title: "Photo Coverage 2", img: "images/photo2.jpg" },
-  { title: "Photo Coverage 3", img: "images/photo3.jpg" },
-  { title: "Photo Coverage 4", img: "images/photo4.jpg" }
-];
+  slider.style.setProperty("--slider-index", sliderIndex)
 
-// Build carousels
-createCarousel("reports-carousel", reportsData);
-createCarousel("searchlight-carousel", searchlightData);
-createCarousel("podium-carousel", podiumData);
-createCarousel("photo-carousel", photoData);
+  if (!isSetCarousel) {
+    updateActiveImage(slider, sliderIndex)
+  }
+
+  slider.addEventListener("transitionend", function reset() {
+    if (isSetCarousel) {
+      if (sliderIndex >= maxSets) {
+        slider.style.transition = "none"
+        slider.style.setProperty("--slider-index", 0)
+        setTimeout(() => {
+          slider.style.transition = "transform 250ms ease-in-out"
+        }, 20)
+      } else if (sliderIndex < 0) {
+        slider.style.transition = "none"
+        slider.style.setProperty("--slider-index", maxSets - 1)
+        setTimeout(() => {
+          slider.style.transition = "transform 250ms ease-in-out"
+        }, 20)
+      }
+    } else {
+      if (sliderIndex >= originalCount + 1) {
+        slider.style.transition = "none"
+        slider.style.setProperty("--slider-index", 1)
+        updateActiveImage(slider, 1)
+        setTimeout(() => {
+          slider.style.transition = "transform 250ms ease-in-out"
+        }, 20)
+      } else if (sliderIndex < 1) {
+        slider.style.transition = "none"
+        slider.style.setProperty("--slider-index", originalCount)
+        updateActiveImage(slider, originalCount)
+        setTimeout(() => {
+          slider.style.transition = "transform 250ms ease-in-out"
+        }, 20)
+      }
+    }
+    slider.removeEventListener("transitionend", reset)
+  })
+}
