@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Import the component injector -->
+    <script src="../shared/scripts/injector.js" defer></script>
+</head>
+<body>
+    <!--
+        Placeholder for a shared component.
+
+        The injector works as follows:
+        1. It looks for all <div> elements with an `id`.
+        2. If a folder exists under the `../shared/components/` directory that matches the `id`,
+           it treats it as a component.
+        3. It injects {id}.html into the div, and optionally adds {id}.css and {id}.js.
+        Example:
+        <div id="header"></div> → looks for ../shared/components/header/header.html
+    -->
+    <div id="header"></div>
+</body>
+</html>
