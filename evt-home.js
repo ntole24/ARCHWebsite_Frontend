@@ -152,3 +152,171 @@ window.addEventListener('resize', () => {
   generateThumbnails();
   selectVideo(currentVideoIndex);
 });
+
+// --- LIVE STREAM AND PHOTO CAROUSELS (updated) ---
+
+// 🟢 LIVE STREAM DATA
+const liveStreams = [
+  {
+    title: "DLSU Pep Rally 2025",
+    date: "Live Now",
+    embed: "https://www.youtube.com/embed/5qap5aO4i9A",
+    thumb: "https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg",
+  },
+  {
+    title: "La Salle Sports Coverage",
+    date: "Nov 3, 2025",
+    embed: "https://www.youtube.com/embed/JGwWNGJdvx8",
+    thumb: "https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg",
+  },
+  {
+    title: "Campus News Live",
+    date: "Nov 2, 2025",
+    embed: "https://www.youtube.com/embed/tgbNymZ7vqY",
+    thumb: "https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg",
+  },
+  {
+    title: "Culture Night 2025",
+    date: "Nov 1, 2025",
+    embed: "https://www.youtube.com/embed/L_jWHffIx5E",
+    thumb: "https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg",
+  },
+];
+
+// 🟣 PHOTO ALBUM DATA
+const albumPhotos = [
+  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800",
+  "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+  "https://images.unsplash.com/photo-1472653431158-6364773b2a56?w=800",
+];
+
+// -----------------------------------------------------------------------------
+// 🎥 LIVE STREAM CAROUSEL (matches Video Highlights)
+// -----------------------------------------------------------------------------
+let currentLiveIndex = 0;
+let currentLiveScroll = 0;
+const liveThumbWidth = 98;
+
+function generateLiveThumbnails() {
+  const track = document.getElementById("liveThumbnailTrack");
+  if (!track) return;
+  track.innerHTML = "";
+
+  const totalThumbnails = liveStreams.length * 3;
+
+  for (let i = 0; i < totalThumbnails; i++) {
+    const idx = i % liveStreams.length;
+    const stream = liveStreams[idx];
+
+    const thumb = document.createElement("div");
+    thumb.className = "thumbnail";
+    thumb.setAttribute("data-live-index", idx);
+    thumb.innerHTML = `
+      <img src="${stream.thumb}" alt="${stream.title}">
+      <div class="thumbnail-overlay">${stream.title}</div>
+    `;
+
+    thumb.onclick = () => selectLiveStream(idx);
+    track.appendChild(thumb);
+  }
+
+  track.style.transform = `translateX(-${liveStreams.length * liveThumbWidth}px)`;
+}
+
+function selectLiveStream(index) {
+  currentLiveIndex = index;
+  const iframe = document.getElementById("liveMainVideo");
+  const title = document.getElementById("liveVideoTitle");
+  const date = document.getElementById("liveVideoDate");
+
+  const stream = liveStreams[index];
+  iframe.src = stream.embed;
+  title.textContent = stream.title;
+  date.textContent = stream.date;
+
+  document.querySelectorAll("#liveThumbnailTrack .thumbnail").forEach((t) => {
+    const i = parseInt(t.getAttribute("data-live-index"));
+    t.classList.toggle("active", i === index);
+  });
+}
+
+function scrollLiveThumbnails(direction) {
+  const track = document.getElementById("liveThumbnailTrack");
+  if (!track) return;
+
+  if (direction === "next") {
+    currentLiveScroll++;
+    currentLiveIndex = (currentLiveIndex + 1) % liveStreams.length;
+  } else {
+    currentLiveScroll--;
+    currentLiveIndex = (currentLiveIndex - 1 + liveStreams.length) % liveStreams.length;
+  }
+
+  const pos = -(liveStreams.length * liveThumbWidth + currentLiveScroll * liveThumbWidth);
+  track.style.transform = `translateX(${pos}px)`;
+
+  setTimeout(() => {
+    if (currentLiveScroll >= liveStreams.length) {
+      currentLiveScroll = 0;
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${liveStreams.length * liveThumbWidth}px)`;
+      setTimeout(() => (track.style.transition = "transform 0.3s ease"), 50);
+    } else if (currentLiveScroll <= -liveStreams.length) {
+      currentLiveScroll = -1;
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${
+        liveStreams.length * liveThumbWidth - liveThumbWidth
+      }px)`;
+      setTimeout(() => (track.style.transition = "transform 0.3s ease"), 50);
+    }
+  }, 300);
+
+  selectLiveStream(currentLiveIndex);
+}
+
+// -----------------------------------------------------------------------------
+// 🖼️ PHOTO ALBUM CAROUSEL (simple horizontal scroll)
+// -----------------------------------------------------------------------------
+let scrollPositions = { photo: 0 };
+
+function loadPhotoCarousel() {
+  const track = document.getElementById("photoTrack");
+  if (!track) return;
+  track.innerHTML = "";
+
+  albumPhotos.forEach((url) => {
+    const item = document.createElement("div");
+    item.className = "carousel-item";
+    item.innerHTML = `<img src="${url}" alt="Event Photo">`;
+    track.appendChild(item);
+  });
+}
+
+function scrollCarousel(type, direction) {
+  if (type !== "photo") return;
+  const track = document.getElementById("photoTrack");
+  if (!track) return;
+
+  const cardWidth = 300; // including gap
+  const visibleCount = Math.floor(track.parentElement.offsetWidth / cardWidth);
+  const maxScroll = (track.children.length - visibleCount) * cardWidth;
+
+  if (direction === "next") {
+    scrollPositions.photo = Math.min(scrollPositions.photo + cardWidth, maxScroll);
+  } else {
+    scrollPositions.photo = Math.max(scrollPositions.photo - cardWidth, 0);
+  }
+
+  track.style.transform = `translateX(-${scrollPositions.photo}px)`;
+}
+
+// -----------------------------------------------------------------------------
+// 🚀 INIT
+// -----------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  generateLiveThumbnails();
+  selectLiveStream(0);
+  loadPhotoCarousel();
+});

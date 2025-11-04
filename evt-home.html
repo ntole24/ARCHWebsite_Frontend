@@ -87,6 +87,64 @@
   </div>
 </div>
 
+<!-- ✅ LIVE STREAM SECTION (matches Video Highlights layout) -->
+<div class="highlights__header">
+  <div class="highlights__title">
+    <h2 class="green highlights__title--sizing">LIVE STREAMS</h2>
+  </div>
+  <div class="highlights__bar">
+    <hr />
+  </div>
+</div>
+
+<div class="video-carousel-container">
+  <div class="main-video-container">
+    <iframe
+      id="liveMainVideo"
+      class="main-video"
+      src="https://www.youtube.com/embed/5qap5aO4i9A"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <div class="video-overlay">
+      <div class="video-title" id="liveVideoTitle">DLSU Pep Rally 2025</div>
+      <div class="video-date" id="liveVideoDate">Live Now</div>
+    </div>
+  </div>
+
+  <div class="thumbnail-section">
+    <div class="thumbnail-container">
+      <div class="thumbnail-track" id="liveThumbnailTrack"></div>
+    </div>
+    <button class="nav-button prev" onclick="scrollLiveThumbnails('prev')">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6v12z"/></svg>
+    </button>
+    <button class="nav-button next" onclick="scrollLiveThumbnails('next')">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6V6z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ✅ PHOTO ALBUM CAROUSEL -->
+<div class="highlights__header">
+  <div class="highlights__title">
+    <h2 class="green highlights__title--sizing">PHOTO ALBUM</h2>
+  </div>
+  <div class="highlights__bar">
+    <hr />
+  </div>
+</div>
+
+<div class="carousel-section" id="photoCarousel">
+  <div class="carousel-track" id="photoTrack"></div>
+  <button class="nav-button prev" onclick="scrollCarousel('photo', 'prev')">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6v12z"/></svg>
+  </button>
+  <button class="nav-button next" onclick="scrollCarousel('photo', 'next')">
+    <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6V6z"/></svg>
+  </button>
+</div>
+
         </div>
       </div>
     </section>

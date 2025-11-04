@@ -196,3 +196,72 @@
     height: 55px;
   }
 }
+
+/* --- UNIVERSAL CAROUSEL STYLING --- */
+.carousel-section {
+  position: relative;
+  max-width: 900px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item {
+  flex: 0 0 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #C0C0C0 0%, #808080 50%, #404040 100%);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.03);
+}
+
+/* Live Stream Cards */
+.carousel-item iframe {
+  width: 100%;
+  height: 160px;
+  border: none;
+}
+
+.carousel-item .live-info {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Photo Cards */
+.carousel-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Reuse nav-button styles */
+.carousel-section .nav-button.prev {
+  left: 5px;
+}
+.carousel-section .nav-button.next {
+  right: 5px;
+}
+
+@media (max-width: 640px) {
+  .carousel-item {
+    flex: 0 0 220px;
+  }
+  .carousel-item img {
+    height: 140px;
+  }
+  .carousel-item iframe {
+    height: 120px;
+  }
+}
