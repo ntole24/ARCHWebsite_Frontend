@@ -1,0 +1,72 @@
+.video-thumb {
+  width: 150px ;
+  height: 300px;
+  background-color: #ccc;
+  border-radius: 8px;
+  margin-right: 1rem;
+  flex: 0 0 40%;
+}
+
+
+
+.project__carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.project__carousel .container__slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  width: 98%;
+  max-width: 1600px;
+}
+
+.project__carousel .slider--wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.project__carousel .slider {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project__carousel .slider__img {
+  flex: 0 0 20%;
+  max-width: calc(100% / 3);
+  width: 100px;         
+  aspect-ratio: 3 / 4;  
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+.project__carousel .arrow {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.project__carousel .arrow:hover {
+  opacity: 1;
+}
+
+.project__carousel .arrow--left {
+  transform: rotate(180deg);
+}
+
